@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <title>我的</title>
+    <link rel="stylesheet" href="../css/base.css"/>
+    <link rel="stylesheet" href="../css/index.css"/>
+    <style>
+        /*弹出框样式*/
+        .confirmBox{
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            z-index: 100;
+            display: none;
+        }
+        .confirm-til{
+            height: 50px;
+            line-height: 50px;
+            background-color: #fff;
+            text-align: center;
+            font-size: 14px;
+            border-bottom: 1px solid #E4E4E4;
+            color:#666666;
+        }
+        .confirm-ok{
+            height: 50px;
+            line-height: 50px;
+            background-color: #fff;
+            text-align: center;
+            color: #FF5400;
+        }
+        .confirm-cancel{
+            margin-top: 10px;
+            height: 50px;
+            line-height: 50px;
+            background-color: #fff;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="my-layout">
+        <div class="my-info clearfix">
+            <div class="my-info-left">
+                <img src="../images/touxiang.png" alt="" width="60px" height="60px"/>
+            </div>
+            <div class="my-info-right">
+                <div class="my-info-name">小陈</div>
+                <div class="my-info-phone">13800138000</div>
+            </div>
+        </div>
+
+        <div class="my-opa">
+            <a href="./account-info01.html">
+                <div class="my-account clearfix">
+                    我的账户
+                    <div class="my-icon-left"></div>
+                    <div class="my-icon-right"></div>
+                </div>
+            </a>
+            <a href="./modify-pwd.html">
+                <div class="my-pwd">
+                    我的密码
+                    <div class="my-icon-left"></div>
+                    <div class="my-icon-right"></div>
+                </div>
+            </a>
+        </div>
+
+        <div class="jkb-btn01 m36" id="quit">退出登录</div>
+    </div>
+
+    <div class="home-tab clearfix">
+        <a href="../Home/home.html">
+            <div class="home-tab-box home">
+                <div class="tab-icon">
+                    <span></span>
+                </div>
+                <div class="tab-til">首页</div>
+            </div>
+        </a>
+        <a href="../Building/building.html">
+            <div class="home-tab-box building">
+                <div class="tab-icon">
+                    <span></span>
+                </div>
+                <div class="tab-til">楼盘</div>
+            </div>
+        </a>
+        <a href="./my.html">
+            <div class="home-tab-box my selected">
+                <div class="tab-icon">
+                    <span></span>
+                </div>
+                <div class="tab-til">我的</div>
+            </div>
+        </a>
+    </div>
+
+    <div class="mask" style="display: none;"></div>
+    <div class="confirmBox">
+        <div class="confirm-til">
+            确定退出登录？
+        </div>
+        <div class="confirm-ok" onclick="hideMess();">
+            退出登录
+        </div>
+        <div class="confirm-cancel" onclick="hideMess();">
+            取消
+        </div>
+    </div>
+</body>
+<script src="../lib/jquery-1.11.1.min.js"></script>
+<script src="../js/index.js"></script>
+<script>
+    $('#quit').click(function(){
+        $('.mask').show();
+        $('.confirmBox').show();
+        $('html').css('overflow','hidden');
+        $('body').css('overflow','hidden');
+    })
+
+    function hideMess(){
+        $('.mask').hide();
+        $('.confirmBox').hide();
+        $('html').css('overflow','auto');
+        $('body').css('overflow','auto');
+    }
+
+
+</script>
+</html>

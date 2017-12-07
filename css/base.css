@@ -1,0 +1,644 @@
+/*---
+    reset css
+            ---*/
+*,
+::before,
+::after {
+    margin: 0;
+    padding: 0;
+    /*针对移动设备*/
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+    background-size: 100% 100% !important;
+}
+
+html,
+body {
+    font-family: "microsoft YaHei", "sans-serif";
+    background-color: #F4F4F4;
+    height: 100%;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+input,
+textarea{
+    border: none;
+    outline: none;
+    resize: none;
+    -webkit-appearance: none;
+    font-size: 16px;
+}
+
+a{
+    text-decoration: none;
+}
+
+img{
+    border: 0;
+    /*display: block;*/
+    margin: 0;
+    padding: 0;
+}
+
+table{
+    border-collapse: collapse;
+    border-spacing:0;
+}
+
+.clearfix{
+    zoom: 1;
+}
+
+.clearfix::after{
+    clear: both;
+    display: block;
+    visibility: hidden;
+    height: 0;
+    content: "";
+}
+
+/*文本超出显示省略号*/
+.text-over{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/*---
+    common css
+            ---*/
+/*登录按钮 & 注册页面的下一步按钮*/
+.jkb-btn01{
+    color: #FFFFFF;
+    text-align: center;
+    height: 44px;
+    line-height: 44px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    background-color: #FF5400;
+}
+/*下一步按钮 & 完成按钮 & 确认按钮 & 马上推荐*/
+.jkb-btn01.m36{
+    margin: 60px 36px 0 36px;
+}
+/*注册按钮*/
+.jkb-btn02{
+    color: #FF5400;
+    text-align: center;
+    height: 44px;
+    line-height: 42px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    background-color: #FFFFFF;
+    border: 2px solid #FF5400;
+}
+/*小按钮 60*30 推荐按钮*/
+.jkb-btn03{
+    color: #FFFFFF;
+    background-color: #FF5400;
+    text-align: center;
+    height: 30px;
+    line-height: 30px;
+    width: 60px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+}
+/*按钮点击变灰效果*/
+.jkb-btn01.active,
+.jkb-btn02.active,
+.jkb-btn03.active{
+    background-color: rgba(0,0,0,.1);
+}
+/*通栏文本输入框(高50px)*/
+.input-area{
+    width: 100%;
+    background-color: #ffffff;
+    padding: 0 18px;
+}
+
+.input-area:nth-child(n+2){
+    margin-top: 12px;
+}
+
+.text-input{
+    height: 50px;
+    line-height: 50px;
+    border-bottom: 1px solid #E4E4E4;
+}
+
+.input-area .text-input:last-child{
+    border-bottom: 0;
+}
+
+.text-input .input-left{
+    float: left;
+    width: 85px;
+    color: #666666;
+}
+
+.text-input .input-right{
+    float: left;
+    width: calc(100% - 120px);
+}
+
+/*没有删除按钮的输入框*/
+.text-input.nodel .input-right{
+    width: calc(100% - 85px);
+}
+
+.text-input .input-right input{
+    width: 100%;
+    color: #666666;
+    background-color: #fff;
+}
+/*兼容ios*/
+.text-input .input-right input:disabled,
+.text-input .input-right input[disabled]{
+    color: #666666;
+    -webkit-text-fill-color:#666666;
+    -webkit-opacity:1;
+    opacity: 1;
+}
+
+.text-input .input-btn-del{
+    width: 18px;
+    height: 18px;
+    float: right;
+    margin-top: 16px;
+    background: url("../images/icon-del.png") no-repeat;
+    margin-right: 14px;
+    display: none;
+}
+
+/*验证码输入框*/
+.text-input.vCode .input-right{
+    width: calc(100% - 175px);
+}
+
+.text-input.vCode .getvCode{
+    width: 90px;
+    height: 50px;
+    line-height: 50px;
+    font-size: 14px;
+    text-align: center;
+    color:#999999;
+    position: relative;
+    float: right;
+}
+
+.text-input.vCode .getvCode.current {
+    color: #FF5400;
+}
+
+.text-input.vCode .getvCode::after{
+    height: 25px;
+    width: 1px;
+    background-color: #E4E4E4;
+    position: absolute;
+    content: "";
+    display: block;
+    top: 12.5px;
+    left: 0;
+}
+
+/*手机号输入框 & 带眼睛图标的密码输入框(高45px)*/
+.tel-input,
+.pwd-input{
+    height: 45px;
+    line-height: 45px;
+    border-bottom: 1px solid #E4E4E4;
+}
+
+.pwd-input{
+    margin: 12px 0 18px;
+}
+
+.tel-input .tel-input-left,
+.pwd-input .pwd-input-left{
+    float: left;
+    width: 70px;
+    color: #666666;
+}
+
+.tel-input .tel-input-right{
+    float: left;
+    width: calc(100% - 110px);
+}
+
+.pwd-input .pwd-input-right{
+    float: left;
+    width: calc(100% - 144px);
+}
+
+.tel-input .tel-input-right input,
+.pwd-input .pwd-input-right input{
+    color: #666666;
+    width: 100%;
+}
+
+.tel-input .tel-input-btnDel,
+.pwd-input .pwd-input-btnDel{
+    width: 18px;
+    height: 18px;
+    float: right;
+    margin-top: 13.5px;
+    background: url("../images/icon-del.png") no-repeat;
+    display: none;
+}
+
+.tel-input .tel-input-btnDel{
+    margin-right: 14px;
+}
+
+.pwd-input .pwd-input-btnLook{
+    width: 22px;
+    height: 18px;
+    float: right;
+    margin-top: 13.5px;
+    background: url("../images/icon-look.png") no-repeat;
+    margin-left: 12px;
+    margin-right: 14px;
+    display: none;
+}
+.pwd-input .pwd-input-btnLook.close{
+    height: 13px;
+    margin-top: 18px;
+    background: url("../images/icon-look2.png") no-repeat;
+}
+
+/*注册页面的验证码输入框(高45px)*/
+.vCode-input{
+    height: 45px;
+    line-height: 45px;
+    border-bottom: 1px solid #E4E4E4;
+}
+
+.vCode-input{
+    margin: 12px 0 18px;
+}
+
+.vCode-input .vCode-input-left{
+    float: left;
+    width: 70px;
+    color: #666666;
+}
+
+.vCode-input .vCode-input-right{
+    float: left;
+    width: calc(100% - 148px);
+}
+
+.vCode-input .vCode-input-right input{
+    color: #666666;
+    width: 100%;
+}
+
+.vCode-input .vCode-input-getvCode{
+    width: 77px;
+    font-size: 14px;
+    text-align: center;
+    color: #999999;
+    position: relative;
+    float: right;
+}
+
+.vCode-input .vCode-input-getvCode.current{
+    color: #FF5400;
+}
+
+.vCode-input .vCode-input-getvCode::after{
+    height: 25px;
+    width: 1px;
+    background-color: #E4E4E4;
+    position: absolute;
+    content: "";
+    display: block;
+    top: 10px;
+    left: 0;
+}
+
+/*radio选项卡*/
+.radio-box{
+    background-color: #ffffff;
+}
+
+.radio-box .radio-til{
+    padding: 18px 0 0 18px;
+    width: 100px;
+    float: left;
+    color: #666666;
+}
+
+.radio-box .radio-list{
+    width: calc(100% - 100px);
+    float: left;
+    padding: 18px 0;
+}
+
+.radio-box .radio-list .radio-li{
+    margin-bottom: 18px;
+}
+
+.radio-box .radio-list .radio-li:last-child{
+    margin-bottom: 0;
+}
+
+.radio-box .radio-list .radio-li .radio-li-icon{
+    width: 14px;
+    height: 14px;
+    display: inline-block;
+    margin-right: 5px;
+    background:url("../images/icon-radio.png") no-repeat;
+}
+
+.radio-box .radio-list .radio-li .radio-li-text{
+    color: #666666;
+    display: inline-block;
+}
+
+.radio-box .radio-list .radio-li.selected .radio-li-text{
+    color: #FF5400;
+}
+
+.radio-box .radio-list .radio-li.selected .radio-li-icon{
+    background:url("../images/icon-radio-selected.png") no-repeat;
+}
+
+/*tab选项栏*/
+.tab-box{
+    padding: 10px 18px;
+    position: fixed;
+    width: 100%;
+    background-color: #F4F4F4;
+    z-index: 10;
+}
+
+.tab-box .tab-ul{
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    border: 1px solid #FF5400;
+    height: 31px;
+    line-height: 30px;
+}
+
+.tab-box .tab-ul .tab-li{
+    float: left;
+    text-align: center;
+    color: #FF5400;
+    border-right: 1px solid #FF5400;
+}
+
+.tab-box .tab-ul .tab-li.selected{
+    background-color: #FF5400;
+    color: #ffffff;
+}
+
+.tab-box .tab-ul .tab-li:last-child{
+    border-right:0;
+}
+
+/*三个选项卡的情况*/
+.tab-box.tab03 .tab-li{
+    width: 33.3333%;
+}
+
+/*信息列表*/
+.info-list{
+    padding: 0 18px;
+    background-color: #fff;
+    border-top: 1px solid #E4E4E4;
+    border-bottom: 1px solid #E4E4E4;
+}
+
+.info-list .info-li{
+    height: 75px;
+    border-bottom: 1px solid #E4E4E4;
+}
+
+.info-list .info-li:last-child{
+    border-bottom:0;
+}
+
+.info-list a .info-li{
+    height: 75px;
+    border-bottom: 1px solid #E4E4E4!important;
+}
+
+.info-list a:last-child .info-li{
+    border-bottom:0!important;
+}
+
+.info-list .info-li .info-top{
+    height: 50px;
+    line-height: 20px;
+    padding: 18px 0 12px;
+}
+
+.info-list .info-li .info-top .info-name{
+    float: left;
+    color: #333333;
+    /*padding-right: 10px;*/
+}
+
+.info-list .info-li .info-top .info-phone{
+    float: left;
+    color: #333333;
+}
+
+.info-list .info-li .info-top .info-sta{
+    float: right;
+    color: #333333;
+    font-size: 12px;
+}
+
+.info-list .info-li .info-top .info-sta.current{
+    color: #FF5400;
+}
+
+.info-list .info-li .info-top .info-money{
+    float: right;
+    color: #FF5400;
+    padding-left: 10px;
+    position: relative;
+    font-size: 13px;
+}
+
+.info-list .info-li .info-top .info-money::after{
+    display: block;
+    content: "";
+    height: 14px;
+    width: 1px;
+    position: absolute;
+    left: 5px;
+    top: 3px;
+    background-color: #E4E4E4;
+}
+
+.info-list .info-li .info-bottom{
+    height: 20px;
+    line-height: 20px;
+}
+
+.info-list .info-li .info-bottom .info-address{
+    float: left;
+    font-size: 14px;
+    color: #666666;
+    padding-right: 12px;
+}
+
+.info-list .info-li .info-bottom .info-hu{
+    float: left;
+    font-size: 14px;
+    color: #666666;
+}
+
+.info-list .info-li .info-bottom .info-date{
+    float: right;
+    font-size: 12px;
+    color: #999999;
+}
+
+/*搜索框 & 下拉选项卡*/
+.search-box{
+    height: 50px;
+    padding: 10px;
+    background-color: #FF5400;
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+}
+
+.search-box .search-select-tab{
+    width: 80px;
+    height: 30px;
+    float: right;
+    line-height: 30px;
+    color: #ffffff;
+    position: relative;
+    text-align: center;
+}
+
+.search-box .search-select-tab .icon-arrow{
+    position: absolute;
+    display: block;
+    width: 7px;
+    height: 7px;
+    background: url("../images/icon-down.png") no-repeat;
+    top: 11px;
+    right: 5px;
+}
+
+.search-box .search-select-tab .icon-arrow.up{
+    background: url("../images/icon-up.png") no-repeat;
+}
+
+.search-box .search-input {
+    position: relative;
+    float: left;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    background-color: #fff;
+    width: calc(100% - 80px);
+    height: 30px;
+    line-height: 30px;
+    padding-left: 40px;
+}
+
+.search-box .search-input .icon-search{
+    width: 20px;
+    height: 20px;
+    background: url("../images/icon-search.png") no-repeat;
+    display: block;
+    position: absolute;
+    top: 5px;
+    left: 10px;
+}
+
+.search-box .search-input >input{
+    width: calc(100% - 10px);
+    color: #333333;
+}
+
+.search-box .search-select-box{
+    position: absolute;
+    top: 50px;
+    left: 0;
+    width: 100%;
+}
+
+.search-box .search-select-li{
+    position: relative;
+    height: 40px;
+    line-height: 40px;
+    background-color: #fff;
+    padding-left: 18px;
+    color: #666666;
+}
+
+.search-box .search-select-li.selected{
+    color: #FF5400;
+    background-color: #F4F4F4;
+}
+
+.search-box .search-select-li.selected span{
+    position: absolute;
+    width: 20px;
+    height: 15px;
+    background: url(../images/icon-choose.png) no-repeat;
+    right: 20px;
+    top: 12px;
+}
+
+/*文章盒子(推荐规则 & 用户协议)*/
+.article-box{
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.article-box .article-til{
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    background-color: #FF5400;
+    color:#fff;
+}
+
+.article-box .article-con{
+    background-color: #fff;
+    color: #333333;
+    padding: 12px;
+}
+
+/*版权信息*/
+.copyright{
+    width: 210px;
+    text-align: center;
+    font-size: 12px;
+    color: #999999;
+    background-color: #fff;
+}
+
+/*遮罩层*/
+.mask{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000000;
+    opacity: 0.5;
+    z-index: 99;
+    display: none;
+}
+
+
+
+

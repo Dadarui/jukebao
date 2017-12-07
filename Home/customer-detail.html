@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <title>客户详情</title>
+    <link rel="stylesheet" href="../css/base.css"/>
+    <link rel="stylesheet" href="../css/index.css"/>
+    <style>
+        html,body{
+            background-color: #fff;
+        }
+        /*弹出框样式*/
+        .confirmBox{
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            z-index: 100;
+            display: none;
+        }
+        .confirmBox a{
+            color: #FF5400;
+        }
+        .confirm-til{
+            height: 50px;
+            line-height: 50px;
+            background-color: #fff;
+            text-align: center;
+            font-size: 14px;
+            border-bottom: 1px solid #E4E4E4;
+            color: #666666;
+        }
+        .confirm-ok{
+            height: 50px;
+            line-height: 50px;
+            background-color: #fff;
+            text-align: center;
+            color: #FF5400;
+        }
+        .confirm-cancel{
+            margin-top: 10px;
+            height: 50px;
+            line-height: 50px;
+            background-color: #fff;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="khxq-layout">
+        <div class="kh-info">
+            <div class="kh-info-row clearfix">
+                <div class="kh-info-til">客户姓名：</div>
+                <div class="kh-info-con">香菇兰瘦</div>
+            </div>
+            <div class="kh-info-row clearfix">
+                <div class="kh-info-til">手机号码：</div>
+                <div class="kh-info-con">15015565055</div>
+            </div>
+            <div class="kh-info-row clearfix">
+                <div class="kh-info-til">推荐日期：</div>
+                <div class="kh-info-con">2017-12-31 12:12:00</div>
+            </div>
+            <div class="kh-info-row clearfix">
+                <div class="kh-info-til">意向产品：</div>
+                <div class="kh-info-con">君威国际金融中心 公寓</div>
+            </div>
+        </div>
+        <div class="kh-operate clearfix">
+            <div class="kh-call">
+                <div class="kh-call-txt"><span></span>拨打电话</div>
+            </div>
+            <div class="kh-mess">
+                <div class="kh-mess-txt"><span></span>发送短信</div>
+            </div>
+        </div>
+        <div class="kh-sta">
+            <!--已完成状态-->
+            <div class="kh-sta-row">
+                <div class="kh-sta-til clearfix">
+                    <div class="kh-sta-name">
+                        已推荐
+                    </div>
+                    <div class="kh-sta-time">
+                        2017-12-21 14:12:12
+                    </div>
+                </div>
+                <div class="kh-sta-con">
+                    备注备注
+                </div>
+            </div>
+            <div class="kh-sta-row">
+                <div class="kh-sta-til clearfix">
+                    <div class="kh-sta-name">
+                        已电联
+                    </div>
+                    <div class="kh-sta-time">
+                        2017-12-21 14:12:12
+                    </div>
+                </div>
+                <div class="kh-sta-con">
+                    备注备注
+                </div>
+            </div>
+            <div class="kh-sta-row">
+                <div class="kh-sta-til clearfix">
+                    <div class="kh-sta-name">
+                        已到访
+                    </div>
+                    <div class="kh-sta-time">
+                        2017-12-21 14:12:12
+                    </div>
+                </div>
+                <div class="kh-sta-con">
+                    备注备注备注备注备注备注备注备注备注备注备注备注备注备注备注备注备注备注备注备注备注备注备注备注备注备注备注备注备注备注备注备注备注备注备注备注备注备注备注备注
+                </div>
+            </div>
+            <!--当前状态-->
+            <div class="kh-sta-row current">
+                <div class="kh-sta-til clearfix">
+                    <div class="kh-sta-name">
+                        已认筹
+                    </div>
+                    <div class="kh-sta-time">
+                        2017-12-21 14:12:12
+                    </div>
+                </div>
+                <div class="kh-sta-con">
+                    备注备注
+                </div>
+            </div>
+            <!--未完成状态-->
+            <div class="kh-sta-row">
+                <div class="kh-sta-til clearfix">
+                    <div class="kh-sta-name">
+                        认购
+                    </div>
+                    <div class="kh-sta-time">
+                    </div>
+                </div>
+                <div class="kh-sta-con">
+                </div>
+            </div>
+            <div class="kh-sta-row">
+                <div class="kh-sta-til clearfix">
+                    <div class="kh-sta-name">
+                        成交
+                    </div>
+                    <div class="kh-sta-time">
+                    </div>
+                </div>
+                <div class="kh-sta-con">
+                </div>
+            </div>
+            <div class="kh-sta-row">
+                <div class="kh-sta-til clearfix">
+                    <div class="kh-sta-name">
+                        结佣
+                    </div>
+                    <div class="kh-sta-time">
+                    </div>
+                </div>
+                <div class="kh-sta-con">
+                </div>
+            </div>
+            <!--左侧过渡条-->
+            <div class="sta-pillar01"></div>
+            <div class="sta-pillar02"></div>
+        </div>
+    </div>
+    <div class="mask" style="display: none;"></div>
+    <div class="confirmBox">
+        <div class="confirm-til">
+            确定呼叫 15015565055？
+        </div>
+        <div class="confirm-ok"onclick="hideMess();">
+            <a href="tel:138001380000">呼叫</a>
+        </div>
+        <div class="confirm-cancel"onclick="hideMess();">
+            取消
+        </div>
+    </div>
+</body>
+<script src="../lib/jquery-1.11.1.min.js"></script>
+<script src="../js/index.js"></script>
+<script>
+//    console.log($('.current').position().top);
+//    console.log($('.kh-sta').height());
+    /*动态设置左侧状态条的高度*/
+    if($('.current').length !=0){
+        $('.sta-pillar01').height($('.current').position().top - 25);
+        $('.sta-pillar02').css('top',$('.current').position().top + 20).height($('.kh-sta').height()-$('.current').position().top - 24);
+    };
+    $('.kh-call').click(function(){
+        $('.mask').show();
+        $('.confirmBox').show();
+        $('html').css('overflow','hidden');
+        $('body').css('overflow','hidden');
+    });
+    $('.mask').click(function(){
+        hideMess();
+    })
+
+    function hideMess(){
+        $('.mask').hide();
+        $('.confirmBox').hide();
+        $('html').css('overflow','auto');
+        $('body').css('overflow','auto');
+    }
+</script>
+</html>

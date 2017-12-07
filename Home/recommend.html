@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <title>推荐</title>
+    <link rel="stylesheet" href="../css/base.css"/>
+    <link rel="stylesheet" href="../css/index.css"/>
+</head>
+<body>
+    <div class="tj-layout">
+        <div class="radio-box clearfix">
+            <div class="radio-til">意向产品</div>
+            <div class="radio-list">
+                <div class="radio-li">
+                    <div class="radio-li-icon"></div>
+                    <div class="radio-li-text">公寓</div>
+                </div>
+                <div class="radio-li">
+                    <div class="radio-li-icon"></div>
+                    <div class="radio-li-text">精装房</div>
+                </div>
+                <div class="radio-li">
+                    <div class="radio-li-icon"></div>
+                    <div class="radio-li-text">商铺</div>
+                </div>
+                <div class="radio-li">
+                    <div class="radio-li-icon"></div>
+                    <div class="radio-li-text">学区房</div>
+                </div>
+                <div class="radio-li">
+                    <div class="radio-li-icon"></div>
+                    <div class="radio-li-text">车库</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="input-area">
+            <div class="text-input nodel clearfix">
+                <div class="input-left">客户姓名</div>
+                <div class="input-right">
+                    <input type="text" placeholder="请输入客户姓名">
+                </div>
+            </div>
+            <div class="text-input nodel clearfix">
+                <div class="input-left">手机号码</div>
+                <div class="input-right">
+                    <input type="text" placeholder="请输入手机号码">
+                </div>
+            </div>
+        </div>
+
+        <div class="tip">
+            系统会为您严格保密，请放心使用。
+        </div>
+
+        <a href="./home.html"><div class="jkb-btn01 m36" id="btn">马上推荐</div></a>
+    </div>
+</body>
+<script src="../lib/jquery-1.11.1.min.js"></script>
+<script src="../js/index.js"></script>
+<script>
+    /*选择事件*/
+    $('.radio-li').click(function(){
+        $(this).addClass('selected').siblings().removeClass('selected');
+    })
+
+</script>
+</html>

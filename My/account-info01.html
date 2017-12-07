@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <title>账户信息-可编辑</title>
+    <link rel="stylesheet" href="../css/base.css"/>
+    <link rel="stylesheet" href="../css/index.css"/>
+    <style>
+        /*银行弹出框样式*/
+        .bankBox{
+            position: absolute;
+            z-index: 100;
+            -webkit-border-radius: 3px;
+            border-radius: 3px;
+            width: 255px;
+            height: 270px;
+            top: 50%;
+            left: 50%;
+            margin-left: -127px;
+            margin-top: -135px;
+            overflow: auto;
+            display: none;
+        }
+        .bankBox-li{
+            text-align: center;
+            height: 45px;
+            line-height: 45px;
+            background-color: #fff;
+            border-bottom: 1px solid #E4E4E4;
+        }
+    </style>
+</head>
+<body>
+    <div class="accInfo-layout">
+        <div class="input-area">
+            <div class="text-input clearfix">
+                <div class="input-left">账号</div>
+                <div class="input-right">
+                    <input type="text" value="15015565055" disabled>
+                </div>
+            </div>
+            <div class="text-input clearfix">
+                <div class="input-left">姓名</div>
+                <div class="input-right">
+                    <input type="text" value="小陈" disabled>
+                </div>
+            </div>
+        </div>
+
+        <div class="input-area">
+            <div class="text-input nodel clearfix">
+                <div class="input-left">身份证</div>
+                <div class="input-right">
+                    <input type="text" placeholder="请输入身份证">
+                </div>
+            </div>
+            <div class="text-input nodel clearfix">
+                <div class="input-left">银行卡号</div>
+                <div class="input-right">
+                    <input type="text" placeholder="请输入银行卡号" id="bank-input">
+                </div>
+            </div>
+            <div class="text-input nodel clearfix" style="position: relative;">
+                <div class="input-left">开户银行</div>
+                <div class="input-right" id="bankBox">
+                    <input type="text" value="请选择开户银行" disabled style="-webkit-text-fill-color: #999999;">
+                    <div class="input-icon-right"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="input-area">
+            <div class="text-input nodel clearfix">
+                <div class="input-left">归属门店</div>
+                <div class="input-right">
+                    <input type="text" placeholder="请输入门店码（选填）">
+                </div>
+            </div>
+        </div>
+
+        <a href="./my.html"><div class="jkb-btn01 m36">完成</div></a>
+    </div>
+
+    <div class="mask" style="display: none;"></div>
+    <div class="bankBox">
+        <div class="bankBox-li">工商银行</div>
+        <div class="bankBox-li">广发银行</div>
+        <div class="bankBox-li">招商银行</div>
+        <div class="bankBox-li">农业银行</div>
+        <div class="bankBox-li">农商银行</div>
+        <div class="bankBox-li">交通银行</div>
+        <div class="bankBox-li">中国银行</div>
+    </div>
+</body>
+<script src="../lib/jquery-1.11.1.min.js"></script>
+<script src="../js/bankinput.js"></script>
+<script src="../js/index.js"></script>
+<script>
+    $('#bankBox').click(function(){
+        $('.mask').show();
+        $('.bankBox').show();
+    });
+
+    $('.mask').on('click', function () {
+        hideMess();
+    });
+
+    //判断银行信息
+    if($('#bankBox input').val() != '请选择开户银行'){
+        $('#bankBox input').css('-webkit-text-fill-color','#666666');
+    }
+
+    $('.bankBox-li').on('click',function(){
+        $('#bankBox input').css('-webkit-text-fill-color','#666666').val($(this).html());
+        hideMess();
+    });
+
+    function hideMess(){
+        $('.mask').hide();
+        $('.bankBox').hide();
+    };
+
+    /*格式化银行卡账号*/
+    $("#bank-input").bankInput();
+</script>
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <title>首页</title>
+    <link rel="stylesheet" href="../css/base.css"/>
+    <link rel="stylesheet" href="../css/index.css"/>
+    <link rel="stylesheet" href="../lib/Swiper/swiper.min.css"/>
+</head>
+<style>
+    body {
+        min-height: 470px;
+    }
+</style>
+<body>
+<div class="home-layout">
+    <!--轮播图-->
+    <div class="swiper-container clearfix">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide"><img src="../images/home-banner.png" alt="" width="100%"/></div>
+            <div class="swiper-slide"><img src="../images/home-banner.png" alt="" width="100%"/></div>
+            <div class="swiper-slide"><img src="../images/home-banner.png" alt="" width="100%"/></div>
+        </div>
+        <div class="swiper-pagination"></div>
+    </div>
+    <!--固定-->
+    <div class="text-row clearfix">
+        <div class="text-box">
+            <div class="text-til">已推荐</div>
+            <div class="text-num">30</div>
+        </div>
+        <div class="text-box">
+            <div class="text-til">已到访</div>
+            <div class="text-num">16</div>
+        </div>
+        <div class="text-box">
+            <div class="text-til">已成交</div>
+            <div class="text-num">6</div>
+        </div>
+        <div class="text-box">
+            <div class="text-til">已结佣</div>
+            <div class="text-num">¥ 6,600</div>
+        </div>
+    </div>
+    <!--我的佣金-->
+    <div class="icon-row clearfix">
+        <div class="icon-box">
+            <a href="./money-02.html">
+                <div class="icon-img">
+                    <span></span>
+                </div>
+                <div class="icon-text">我的佣金</div>
+            </a>
+        </div>
+
+        <!--我的客户-->
+        <div class="icon-box">
+            <a href="./customer-02.html">
+                <div class="icon-img">
+                    <span></span>
+                </div>
+                <div class="icon-text">我的客户</div>
+            </a>
+        </div>
+
+        <!--推荐规则-->
+        <div class="icon-box">
+            <a href="./recom-rule.html">
+                <div class="icon-img">
+                    <span></span>
+                </div>
+                <div class="icon-text">推荐规则</div>
+            </a>
+        </div>
+
+    </div>
+
+    <!--解决ios下边距合并问题-->
+    <div style="text-align: center">
+        <a href="./recommend.html">
+            <div class="tuijian"></div>
+        </a>
+    </div>
+</div>
+
+<div class="home-tab clearfix">
+    <a href="./home.html">
+        <div class="home-tab-box home selected">
+            <div class="tab-icon">
+                <span></span>
+            </div>
+            <div class="tab-til">首页</div>
+        </div>
+    </a>
+    <a href="../Building/building.html">
+        <div class="home-tab-box building">
+            <div class="tab-icon">
+                <span></span>
+            </div>
+            <div class="tab-til">楼盘</div>
+        </div>
+    </a>
+    <a href="../My/my.html">
+        <div class="home-tab-box my">
+            <div class="tab-icon">
+                <span></span>
+            </div>
+            <div class="tab-til">我的</div>
+        </div>
+    </a>
+</div>
+</body>
+<script src="../lib/jquery-1.11.1.min.js"></script>
+<script src="../lib/Swiper/swiper.jquery.min.js"></script>
+<script>
+    /*轮播图事件*/
+    var swiper = new Swiper('.swiper-container', {
+        pagination: '.swiper-pagination',
+        paginationClickable: true,
+        autoplay: 2000,
+        autoplayDisableOnInteraction: false
+    })
+</script>
+</html>
